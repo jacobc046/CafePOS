@@ -5,8 +5,8 @@
 //  Created by Jacob Croket on 8/3/24.
 //
 
-#ifndef OrderHandlingFunctions_h
-#define OrderHandlingFunctions_h
+#include <vector>
+#include "MenuItem.h"
 
-
-#endif /* OrderHandlingFunctions_h */
+//create a new menu item that can be added to orders
+void createNewMenuItem(vector<MenuItem>& menuItems);

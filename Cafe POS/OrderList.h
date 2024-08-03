@@ -5,8 +5,17 @@
 //  Created by Jacob Croket on 8/2/24.
 //
 
-#ifndef OrderList_h
-#define OrderList_h
+#include <string>
+#include "OrderNode.h"
 
-
-#endif /* OrderList_h */
+class OrderList {
+private:
+    OrderNode* head;
+    
+public:
+    OrderList();
+    ~OrderList();
+    void addOrder(const OrderNode& order);
+    void deleteOrder(const string name);
+    friend ostream& operator<<(ostream& os, const OrderList& list);
+};

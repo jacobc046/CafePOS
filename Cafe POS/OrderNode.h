@@ -5,8 +5,18 @@
 //  Created by Jacob Croket on 8/2/24.
 //
 
-#ifndef OrderNode_h
-#define OrderNode_h
+#include "Order.h"
 
+using namespace std;
 
-#endif /* OrderNode_h */
+class OrderNode {
+private:
+    Order order;
+    OrderNode* next;
+    
+public:
+    OrderNode(const Order& order);
+    Order getOrder();
+    OrderNode* getNext();
+    friend class OrderList;
+};
