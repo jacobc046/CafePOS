@@ -5,6 +5,7 @@
 //  Created by Jacob Croket on 8/3/24.
 //
 
+#include "MenuItem.h"
 #include "OrderList.h"
 #include "MenuIOFunctions.h"
 #include "OrderHandlingFunctions.h"
