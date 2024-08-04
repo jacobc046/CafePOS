@@ -58,12 +58,17 @@ float OrderList::closeOrder() {
             
             //get the order total of that node
             float orderTotal = current->order.getTotalPrice();
-                
-            //connect the current and next nodes together
-            previous->next = current->next;
             
-            //delete the order that was cashed out
-            delete orderToClose;
+            if (current == head) {
+                head = current->next;
+                delete orderToClose;
+            } else {
+                //connect the current and next nodes together
+                previous->next = current->next;
+                
+                //delete the order that was cashed out
+                delete orderToClose;
+            }
             
             //display success to user
             cout << "Order closed with $" << orderTotal << " added to profits!" << endl << endl;
