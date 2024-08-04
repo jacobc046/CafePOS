@@ -1,2 +1,0 @@
-Target dependency graph (1 target)
-Target 'Cafe POS' in project 'Cafe POS' (no dependencies)
