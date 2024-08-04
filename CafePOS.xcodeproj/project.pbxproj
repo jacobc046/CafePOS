@@ -93,9 +93,9 @@
 				12599BFD2C5F34F700991416 /* Functions */,
 				12599C042C5F34F700991416 /* Headers */,
 				12599C072C5F34F700991416 /* ListBodys */,
-				12599C082C5F34F700991416 /* main.cpp */,
 				12599C092C5F34F700991416 /* MenuItem.cpp */,
 				12599C0A2C5F34F700991416 /* Order.cpp */,
+				12599C082C5F34F700991416 /* main.cpp */,
 			);
 			path = CafePOS;
 			sourceTree = "<group>";
@@ -304,6 +304,7 @@
 		12AAAEA62C5D9879002ECEB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_IMPLICIT_FALLTHROUGH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -313,6 +314,7 @@
 		12AAAEA72C5D9879002ECEB4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_WARN_IMPLICIT_FALLTHROUGH = YES;
 				CODE_SIGN_STYLE = Automatic;
 				MACOSX_DEPLOYMENT_TARGET = 14.4;
 				PRODUCT_NAME = "$(TARGET_NAME)";

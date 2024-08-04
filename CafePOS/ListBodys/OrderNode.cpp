@@ -8,6 +8,7 @@
 #include "OrderNode.h"
 
 OrderNode::OrderNode(const Order& order) : order(order.getName()) {
+    this->order = order;
     next = nullptr;
 }
 

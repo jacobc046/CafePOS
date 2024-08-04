@@ -23,9 +23,14 @@ OrderList::~OrderList() {
 }
 
 void OrderList::addOrder(const OrderNode& order) {
+    if (head == nullptr) {
+        head = new OrderNode(order);
+        return;
+    }
+    
     OrderNode* current = head;
     
-    while(current != nullptr) {
+    while(current->next != nullptr) {
         current = current->next;
     }
     
@@ -41,30 +46,32 @@ float OrderList::closeOrder() {
     getInput(customerName);
     
     OrderNode* current = head;
-    OrderNode* nextNode = current->next;
+    OrderNode* previous = head;
     
     //traverse the list
-    while (nextNode != nullptr) {
+    while (current != nullptr) {
         
-        //if the next node has the desired input name
-        if (nextNode->order.getName() == customerName) {
+        //if the current node has the desired input name
+        if (current->order.getName() == customerName) {
+            
+            OrderNode* orderToClose = current;
             
             //get the order total of that node
-            float orderTotal = nextNode->order.getTotalPrice();
+            float orderTotal = current->order.getTotalPrice();
                 
             //connect the current and next nodes together
-            current->next = nextNode->next;
+            previous->next = current->next;
             
             //delete the order that was cashed out
-            delete nextNode;
+            delete orderToClose;
             
             //display success to user
             cout << "Order closed with $" << orderTotal << " added to profits!" << endl << endl;
             
             return orderTotal;
         }
+        previous = current;
         current = current->next;
-        nextNode = nextNode->next;
     }
     
     //because the loop did not return,

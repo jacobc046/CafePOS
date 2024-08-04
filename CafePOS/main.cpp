@@ -76,9 +76,6 @@ int main() {
         }
     }
     
-    //save the menu items to the menu items file
-    writeMenuItems(menuItems);
-    
     return 0;
 }
 

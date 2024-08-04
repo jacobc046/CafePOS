@@ -52,8 +52,12 @@ void createNewMenuItem(vector<MenuItem>& menuItems) {
     MenuItem newItem(itemName, itemPrice);
     menuItems.push_back(newItem);
     
+    //save the menu items to the menu items file
+    writeMenuItems(menuItems);
+    
     return;
 }
+
 
 void writeMenuItems(const vector<MenuItem>& menuItems) {
     ofstream menu("menu.txt");
