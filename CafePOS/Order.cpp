@@ -30,5 +30,4 @@ void Order::printOrder() const {
     for (MenuItem item : items) {
         cout << item.getName() << endl;
     }
-    cout << endl;
 }

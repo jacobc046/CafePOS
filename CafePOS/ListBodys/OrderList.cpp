@@ -106,16 +106,24 @@ void OrderList::deleteOrder() {
             
             previous->next = current->next;
             delete temp;
+            cout << "Order deleted successfully." << endl << endl;
             return;
         }
         
         previous = current;
         current = current->next;
     }
+    
+    //if the loop finishes, alert the user it could not find the order they requested to delete
+    cout << "There are no orders with this customer name." << endl << endl;
 }
 
 ostream& operator<<(ostream& os, const OrderList& list) {
     OrderNode* current = list.head;
+    
+    if (current == nullptr) {
+        return os << "There are no orders to display." << endl;
+    }
     
     while (current != nullptr) {
         current->getOrder().printOrder();

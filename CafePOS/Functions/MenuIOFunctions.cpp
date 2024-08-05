@@ -11,8 +11,10 @@
 void getMenuItems(vector<MenuItem>& menuItems) {
     
     ifstream menu;
+    ifstream prices;
     
     menu.open("menu.txt");
+    prices.open("prices.txt");
     
     string itemName;
     float itemPrice;
@@ -21,7 +23,7 @@ void getMenuItems(vector<MenuItem>& menuItems) {
     //each menu item is of the format:
     //ITEM_NAME
     //ITEM_PRICE
-    while (getline(menu, itemName) and menu >> itemPrice) {
+    while (getline(menu, itemName) and prices >> itemPrice) {
         
         //create a new menu item object
         MenuItem newItem(itemName, itemPrice);
@@ -31,6 +33,7 @@ void getMenuItems(vector<MenuItem>& menuItems) {
     }
     
     menu.close();
+    prices.close();
 }
 
 
@@ -60,11 +63,17 @@ void createNewMenuItem(vector<MenuItem>& menuItems) {
 
 
 void writeMenuItems(const vector<MenuItem>& menuItems) {
-    ofstream menu("menu.txt");
+    ofstream menu;
+    ofstream prices;
+    
+    menu.open("menu.txt");
+    prices.open("prices.txt");
     
     for (MenuItem item : menuItems) {
-        menu << item.getName() << endl << item.getPrice() << endl;
+        menu << item.getName() << endl;
+        prices << item.getPrice() << endl;
     }
     
     menu.close();
+    prices.close();
 }
