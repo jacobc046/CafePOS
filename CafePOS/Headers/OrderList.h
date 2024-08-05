@@ -17,6 +17,8 @@ private:
 public:
     OrderList();
     ~OrderList();
+    
+    //functions to manage the list of orders
     void addOrder(const OrderNode& order);
     float closeOrder();
     void deleteOrder();

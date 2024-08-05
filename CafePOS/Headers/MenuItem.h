@@ -22,14 +22,15 @@ template<typename Type>
 void getInput(Type& input) {
     cin.exceptions(ios::failbit);
     
-    //if the input fails, alert the user and
-    //display the error message passed in
+    //if the input fails, alert the user and display the error message
     while (true) {
         try {
             cin >> input;
         }
         catch (ios_base::failure &err) {
             cout << "That is not a valid input, try again: ";
+            
+            //clear the in stream of the errored input
             cin.clear();
             string garbage;
             cin >> garbage;

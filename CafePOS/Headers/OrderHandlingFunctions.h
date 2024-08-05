@@ -10,7 +10,7 @@
 #include <vector>
 #include "OrderList.h"
 
-//create a new menu item that can be added to orders
+//create a new order using a vector of MenuItems and the list of orders
 void createNewOrder(vector<MenuItem>& menuItems, OrderList& orders);
 
 template<typename Type>

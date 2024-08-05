@@ -8,8 +8,8 @@
 #include "MenuIOFunctions.h"
 #include "OrderHandlingFunctions.h"
 
+//read the menu items and prices from their respective files
 void getMenuItems(vector<MenuItem>& menuItems) {
-    
     ifstream menu;
     ifstream prices;
     
@@ -19,10 +19,7 @@ void getMenuItems(vector<MenuItem>& menuItems) {
     string itemName;
     float itemPrice;
     
-    //read the name of the menu item then the price until there are no more inputs
-    //each menu item is of the format:
-    //ITEM_NAME
-    //ITEM_PRICE
+    //read each menu item name and price
     while (getline(menu, itemName) and prices >> itemPrice) {
         
         //create a new menu item object
@@ -37,6 +34,7 @@ void getMenuItems(vector<MenuItem>& menuItems) {
 }
 
 
+//create a new item that can be used when creating orders
 void createNewMenuItem(vector<MenuItem>& menuItems) {
     string itemName;
     float itemPrice;
@@ -62,6 +60,7 @@ void createNewMenuItem(vector<MenuItem>& menuItems) {
 }
 
 
+//write and save the menu item name and price data to their files
 void writeMenuItems(const vector<MenuItem>& menuItems) {
     ofstream menu;
     ofstream prices;
@@ -69,6 +68,7 @@ void writeMenuItems(const vector<MenuItem>& menuItems) {
     menu.open("menu.txt");
     prices.open("prices.txt");
     
+    //write data
     for (MenuItem item : menuItems) {
         menu << item.getName() << endl;
         prices << item.getPrice() << endl;
